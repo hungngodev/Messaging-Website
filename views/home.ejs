@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+<head>
+  <body>
+    <header>
+      <h1  class="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
+        IS_2 - Anonymous Message Board
+      </h1>
+    </header>
+    <h2>
+      <a href="http://localhost:8080/b/general/">Go to testing <i>'/b/general/'</i> board</a>
+    </h2>
+    <hr style="margin: 50px" />
+    <div id="testui" class="" >
+      <h2 class="text-xl leading-7 text-black-900">API Tests:</h2>
+      <h4>New thread (POST /api/threads/:board)</h4>
+      <form action="http://localhost:8080/api/threads/:board" method="post">
+        <input
+          type="text"
+          placeholder="board"
+          name="board"
+          required=""
+        /><br />
+        <textarea
+          type="text"
+          placeholder="Thread text..."
+          name="text"
+          required=""
+        ></textarea
+        ><br />
+        <input
+          type="text"
+          placeholder="password to delete"
+          name="password"
+          required=""
+        /><br />
+        <input type="submit" />
+      </form>
+      <hr />
+      <h4>Report thread (PUT /api/threads/:board)</h4>
+      <form action='http://localhost:8080/api/threads/:board?_method=PUT' method='post'>
+        <input
+          type="text"
+          placeholder="board"
+          name="board"
+          required=""
+        /><br />
+        <input
+          type="text"
+          placeholder="id to report"
+          name="idThread"
+          required=""
+        /><br />
+        <input type="submit"/>
+      </form>
+      <hr />
+      <h4>Delete thread (DELETE /api/threads/:board)</h4>
+      <form action='http://localhost:8080/api/threads/:board?_method=DELETE' method='post'>
+        <input
+          type="text"
+          placeholder="board"
+          name="board"
+          required=""
+        /><br />
+        <input
+          type="text"
+          placeholder="id to delete"
+          name="idThread"
+          required=""
+        /><br />
+        <input
+          type="text"
+          placeholder="password"
+          name="password"
+          required=""
+        /><br />
+        <input type="submit" />
+      </form>
+      <hr />
+
+      <h4>New reply (POST /api/replies/:board)</h4>
+      <form action="http://localhost:8080/api/replies/:board" method="post">
+        <input
+          type="text"
+          placeholder="board"
+          name="board"
+          required=""
+        /><br />
+        <input
+          type="text"
+          placeholder="thread id"
+          name="idThread"
+          required=""
+        /><br />
+        <textarea
+          type="text"
+          placeholder="Thread text..."
+          name="text"
+          required=""
+        ></textarea
+        ><br />
+        <input
+          type="text"
+          placeholder="password to delete"
+          name="password"
+          required=""
+        /><br />
+        <input type="submit"/>
+      </form>
+      <hr />
+      <h4>Report reply (PUT /api/replies/:board)</h4>
+      <form action="http://localhost:8080/api/replies/:board?_method=PUT" >
+        <input
+          type="text"
+          placeholder="board"
+          name="board"
+          required=""
+        /><br />
+        <input
+          type="text"
+          placeholder="thread id"
+          name="idThread"
+          required=""
+        /><br />
+        <input
+          type="text"
+          placeholder="id to report"
+          name="idReply"
+          required=""
+        /><br />
+        <input type="submit"/>
+      </form>
+      <hr />
+      <h4>Delete reply (DELETE /api/replies/:board)</h4>
+      <form  action="http://localhost:8080/api/replies/:board?_method=DELETE">
+        <input
+          type="text"
+          placeholder="board"
+          name="board"
+          required=""
+        /><br />
+        <input
+          type="text"
+          placeholder="thread id"
+          name="idThread"
+          required=""
+        /><br />
+        <input
+          type="text"
+          placeholder="id to delete"
+          name="idReply"
+          required=""
+        /><br />
+        <input
+          type="text"
+          placeholder="password"
+          name="password"
+          required=""
+        /><br />
+        <input type="submit"/>
+      </form>
+    </div>
+    <hr style="margin: 50px; margin-top: 200px" />
+  </body>
+</html>
